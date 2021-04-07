@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+
+{% block contenido %}
+    <form action="." method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form_user.as_p }}
+
+        {{ form_persona.as_p }}
+        <input type="submit" value="Guardar">
+    </form>
+{% endblock contenido %}
+    

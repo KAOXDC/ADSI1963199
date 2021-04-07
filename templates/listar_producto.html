@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+
+{% block contenido %}
+    <h1>Lista de Productos</h1>
+
+    <a class="nav-link" href="{% url 'agregar_producto' %}"> Nuevo Producto</a> 
+
+    {{ lista }}
+
+    
+    {% for p in lista %}
+        <p>
+            {{ p }}
+            <a href="{% url 'ver_producto' id_prod=p.id %}">ver detalle </a> 
+            <a href="{% url 'editar_producto' id_prod=p.id %}"> editar</a>
+            <a href="{% url 'eliminar_producto' id_prod=p.id %}"> eliminar</a>
+        </p>
+    {% endfor %}
+        
+
+{% endblock contenido %}
+    
